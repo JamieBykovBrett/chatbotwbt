@@ -3,23 +3,19 @@ const chatbotMessages = document.getElementById('chatbot-messages');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
+// Initialize the OpenAI API
+const openai = new OpenAI('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');
+
 // Define a function to generate a response from the GPT-3.5-Turbo model
 async function generateResponse(inputText) {
-  const response = await fetch('https://api.gpt-3.5-turbo.com/generate', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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'
-    },
-    body: JSON.stringify({
-      prompt: inputText,
-      max_tokens: 3000, // Maximum length of the generated response
-      temperature: 0.5, // Controls the "creativity" of the generated response
-      n: 1 // Number of responses to generate
-    })
+  const response = await openai.complete({
+    engine: 'davinci',
+    prompt: inputText,
+    maxTokens: 3000, // Maximum length of the generated response
+    temperature: 0.5, // Controls the "creativity" of the generated response
+    n: 1 // Number of responses to generate
   });
-  const responseData = await response.json();
-  return responseData.choices[0].text;
+  return response.data.choices[0].text;
 }
 
 // Define a function to add a message to the chatbot

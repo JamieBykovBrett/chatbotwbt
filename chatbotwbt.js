@@ -9,8 +9,7 @@ async function generateResponse(inputText) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer <script src="https://cdn.jsdelivr.net/npm/@openai/api@0.8.0/dist/index.iife.min.js"></script>
-<script src="chatbot.js"></script>
+      'Authorization': 'Bearer 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'
 '
     },
     body: JSON.stringify({

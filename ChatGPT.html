@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatbot Example</title>
+	<style>
+		#chatbot-container {
+			max-width: 500px;
+			margin: 0 auto;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			padding: 20px;
+			box-sizing: border-box;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+
+		#chatbot-header {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		#chatbot-messages {
+			height: 300px;
+			overflow-y: scroll;
+			margin-bottom: 20px;
+		}
+
+		.message {
+			padding: 10px;
+			border-radius: 5px;
+			margin-bottom: 10px;
+			word-wrap: break-word;
+		}
+
+		.chatbot-message {
+			background-color: #f1f1f1;
+			color: #000;
+			align-self: flex-start;
+		}
+
+		.user-message {
+			background-color: #007bff;
+			color: #fff;
+			align-self: flex-end;
+		}
+
+		#chatbot-input {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		#user-input {
+			flex-grow: 1;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-right: 10px;
+			box-sizing: border-box;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+
+		#send-button {
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			background-color: #007bff;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.5;
+			cursor: pointer;
+		}
+	</style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@openai/api@0.8.0/dist/index.iife.min.js">
+    </script>
+    <script src="https://github.dev/JamieBykovBrett/chatbotwbt/blob/b86f6c3cc59ef14ea12d0a0b11330685418af629/chatbotwbt.js#L1"></script>  
+</head>
+<body>
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <h1>ChatGPT Enabled Chatbot</h1>
+        </div>
+        <div id="chatbot-messages">
+            <!-- Chatbot messages will be displayed here -->
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="user-input" placeholder="Type your message here">
+            <button id="send-button">Send</button>
+        </div>
+    </div> 
+</body>
+</html>

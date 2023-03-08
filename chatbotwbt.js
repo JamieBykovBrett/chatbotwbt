@@ -10,7 +10,6 @@ async function generateResponse(inputText) {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer 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'
-'
     },
     body: JSON.stringify({
       prompt: inputText,
